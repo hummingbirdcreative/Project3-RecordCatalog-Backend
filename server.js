@@ -73,5 +73,20 @@ app.delete("/records/:id", async (req, res) => {
     }
   });
 
+//Update Route
+app.put("/records/:id", async (req, res) => {
+    try {
+      res.status(200).json(await Record.findByIdAndUpdate(
+        req.params.id, 
+        req.body, 
+        { new: true }
+        ));
+    } catch (error) {
+      res.status(400).json(error);
+    }
+  });
+
+
+
 //Tell App to Listen
 app.listen(PORT, () => console.log(`Express is listening on PORT ${PORT}`));
