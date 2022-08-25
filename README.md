@@ -67,7 +67,7 @@ Here are a few of the views as a login-in user.
 ## Technical Requirements
 
 - A working full-stack, single -page application hosted on Heroku & Netlify.
--Incorporate the technologies of the MERN-stack using Node.js, Mongoose, Express and React.
+- Incorporate the technologies of the MERN-stack using Node.js, Mongoose, Express and React.
 - Have a well-styled front-end that communicates with Express backend via AJAX.
 - Include at least two of the four CRUD data operations/actions.
 - Be deployed online and accessible to the public via Heroku
@@ -80,7 +80,7 @@ Here are a few of the views as a login-in user.
 - [Express](https://expressjs.com/)
 - [Mongoose](https://mongoosejs.com/docs/index.html)
 - [MongoDB Atlas](https://www.mongodb.com/atlas)
-#### Deploymnet
+#### Deployment
 - [Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
 - [Netlify](https://docs.netlify.com/?_gl=1%2a3nt3we%2a_gcl_aw%2aR0NMLjE2NjEzOTM2NTIuQ2p3S0NBandtSmVZQmhBd0Vpd0FYbGcwQVNXeHdhaDY3cXZTVFBxOHBTcTdEeUdmWWhDUmRjdmxnX0V4MkFseGcwd3VCM3ltcHNUc3V4b0NqRmNRQXZEX0J3RQ..&_ga=2.106224459.93517023.1661393652-710746354.1661393652&_gac=1.112985462.1661393652.CjwKCAjwmJeYBhAwEiwAXlg0ASWxwah67qvSTPq8pSq7DyGfYhCRdcvlg_Ex2Alxg0wuB3ympsTsuxoCjFcQAvD_BwE)
 
@@ -103,8 +103,8 @@ Here are a few of the views as a login-in user.
 - Search option
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-## Developement
-### Planning, Research, and Future Developement 
+## Development
+### Planning, Unsolved Problems, and Future Enhancements 
 
 #### Tools used
 - [Invision](https://www.invisionapp.com/)
@@ -143,3 +143,5 @@ Here are a few of the views as a login-in user.
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 *If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement". Don't forget to give the project a star! Thanks again!*
+
+<p align="right">(<a href="#top">back to top</a>)</p>
