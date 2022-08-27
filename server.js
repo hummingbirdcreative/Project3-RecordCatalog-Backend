@@ -5,7 +5,6 @@ const cors = require('cors');
 const logger = require('morgan');
 const admin = require('firebase-admin');
 const { getAuth } = require('firebase-admin/auth');
-const serviceAccount = require('./firebase-private-key.json');
 const recordRouter = require('./controllers/records');
 
 //Initialize App
@@ -13,10 +12,21 @@ const app = express();
 
 //Configure Settings
 require('dotenv').config();
-const { PORT, DATABASE_URL } = process.env;
+const { PORT, DATABASE_URL, PRIVATE_KEY_ID, PRIVATE_KEY } = process.env;
 
 admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount)
+    credential: admin.credential.cert({
+        "type": "service_account",
+        "project_id": "record-catalog",
+        "private_key_id": PRIVATE_KEY_ID,
+        "private_key": PRIVATE_KEY.replace('\n', ''),
+        "client_email": "firebase-adminsdk-rhm7m@record-catalog.iam.gserviceaccount.com",
+        "client_id": "103139671292416566092",
+        "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+        "token_uri": "https://oauth2.googleapis.com/token",
+        "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+        "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-rhm7m%40record-catalog.iam.gserviceaccount.com"
+      })
 });
 
 //Connect to MongoDB using Mongoose
@@ -38,6 +48,7 @@ app.use(async function(req, res, next) {
         req.user = null;
     }
     } catch (error) {
+        req.user = null;
     }
     next();
 });
@@ -59,7 +70,7 @@ app.get("/", (req, res) => {
     res.send("hola record catalog");
 });
 
-app.use('/api/records', recordRouter);
+app.use('/api/records', isAuthenticated, recordRouter);
 
 app.get('/*', (req, res) => {
     res.status(404).json({ message: 'not found' })
