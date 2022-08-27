@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const logger = require('morgan');
 const admin = require('firebase-admin');
+const { getAuth } = require('firebase-admin/auth');
 const serviceAccount = require('./firebase-private-key.json');
 const recordRouter = require('./controllers/records');
 
@@ -27,9 +28,17 @@ app.use(cors());
 app.use(logger('dev'));
 
 //authorization middleware
-app.use(function(req, res, next) {
+app.use(async function(req, res, next) {
+    try {
     const token = req.get('Authorization');
-    console.log(token);
+    if(token) {
+    const user =  await getAuth().verifyIdToken(token.replace('Bearer ', ''));
+    req.user = user;
+    } else {
+        req.user = null;
+    }
+    } catch (error) {
+    }
     next();
 });
 
