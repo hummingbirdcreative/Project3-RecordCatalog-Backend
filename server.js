@@ -3,6 +3,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const logger = require('morgan');
+const admin = require('firebase-admin');
+const serviceAccount = require('./firebase-private-key.json');
 const recordRouter = require('./controllers/records');
 
 //Initialize App
@@ -12,6 +14,10 @@ const app = express();
 require('dotenv').config();
 const { PORT, DATABASE_URL } = process.env;
 
+admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount)
+});
+
 //Connect to MongoDB using Mongoose
 mongoose.connect(DATABASE_URL);
 
@@ -19,6 +25,13 @@ mongoose.connect(DATABASE_URL);
 app.use(express.json());
 app.use(cors());
 app.use(logger('dev'));
+
+//authorization middleware
+app.use(function(req, res, next) {
+    const token = req.get('Authorization');
+    console.log(token);
+    next();
+});
 
 mongoose.connection
 .on('connected', () => console.log('Connected to MongoDB'))
