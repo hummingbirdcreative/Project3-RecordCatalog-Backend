@@ -42,6 +42,13 @@ app.use(async function(req, res, next) {
     next();
 });
 
+function isAuthenticated(req, res, next) {
+    if(req.user) return next();
+    res.status(401).json({
+        message: 'you must login first'
+    });
+}
+
 mongoose.connection
 .on('connected', () => console.log('Connected to MongoDB'))
 .on('error', (error) => console.log('MongoDB Error:' + error.message));
