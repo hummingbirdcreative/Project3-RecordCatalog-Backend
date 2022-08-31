@@ -43,7 +43,7 @@ This application will allow the user to catalog their music records in an organi
     <a href="https://github.com/hummingbirdcreative/Project3-RecordCatalog-Backend"><strong>Explore the Backend Docs »</strong>
     <br />
     <br />
-    <a href="#">View Live Site</a>
+    <a href="https://record-project.netlify.app/">View Live Site</a>
     ·
     <a href="https://github.com/hummingbirdcreative/Project3-RecordCatalog-Backend/issues">Report Bug</a>
     ·
