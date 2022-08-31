@@ -38,7 +38,9 @@
   <p align="center">
 This application will allow the user to catalog their music records in an organized online database. There will be flexibility to create, edit, or delete, making this application unique to each user.
     <br />
-    <a href="#"><strong>Explore the docs »</strong></a>
+    <br />
+    <a href="https://github.com/hummingbirdcreative/Project3-RecordCatalog-FrontEnd-"><strong>Explore the Frontend Docs »</strong></a><br>
+    <a href="https://github.com/hummingbirdcreative/Project3-RecordCatalog-Backend"><strong>Explore the Backend Docs »</strong>
     <br />
     <br />
     <a href="#">View Live Site</a>
@@ -57,13 +59,6 @@ Here are a few of the views as a login-in user.
 ![UserProfile](#)
 ![RecordIndex](#)
 
-## Do you want to see what a live, exsisting user collection looks like? 
-<b>For testing purposes, you can use the login with:</b> <br>
--- email: test@email.com <br>
--- password: testtest
-
-<em>*You can add/edit anything you wish. However, please only delete an item if you added it. Thank you!</em>
-
 ## Technical Requirements
 
 - A working full-stack, single -page application hosted on Heroku & Netlify.
@@ -75,6 +70,7 @@ Here are a few of the views as a login-in user.
 ## Technologies used
 #### Frontend
 - [React](https://reactjs.org/)
+- [Styled Components](https://styled-components.com/)
 #### Backend
 - [Node.js](https://nodejs.org/dist./v6.16.0/docs/api/synopsis.html)
 - [Express](https://expressjs.com/)
@@ -127,7 +123,7 @@ Here are a few of the views as a login-in user.
 ## Future Enhancements
 
 - Add a wishlist option for users
-- utilize an api for the user to search a database for new games
+- utilize an api for the user to search a database for new records
 - allow users to add friends
 
 <p align="right">(<a href="#top">back to top</a>)</p>
