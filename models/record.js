@@ -9,7 +9,8 @@ const recordSchema = new Schema({
     bandName: String,
     albumTitle: String,
     vinylSize: String,
-    description: String
+    description: String, 
+    createdBy: String
 }, { timestamps: true });
 
 module.exports = mongoose.model('Record', recordSchema);

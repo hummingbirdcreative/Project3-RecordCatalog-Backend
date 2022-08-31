@@ -66,8 +66,8 @@ mongoose.connection
 
 //Mount Routes
 //test route
-app.get("/", (req, res) => {
-    res.send("hola record catalog");
+app.get('/', (req, res) => {
+    res.send('hola record catalog');
 });
 
 app.use('/api/records', isAuthenticated, recordRouter);
