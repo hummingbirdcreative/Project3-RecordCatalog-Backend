@@ -56,8 +56,8 @@ This application will allow the user to catalog their music records in an organi
 My first MERN application using Node.js, MongoDb, Mongoose, Express and React.
 
 Here are a few of the views as a login-in user.
-![UserProfile](#)
-![RecordIndex](#)
+![HomePage](https://i.imgur.com/5J583XW.png)
+![ShowPage](https://i.imgur.com/55vv8rO.png)
 
 ## Technical Requirements
 
